@@ -39,7 +39,12 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-
+  axios: {
+    proxy: true
+  },
+proxy: {
+    "/api": "http://localhost:8080"
+  },
   // Server Middleware
   serverMiddleware: {
     '/api': '~/api'
