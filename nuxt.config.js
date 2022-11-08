@@ -15,7 +15,7 @@ export default {
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' },
     ],
     script: [
-      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js'},
+      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js' },
     ]
   },
 
@@ -42,18 +42,20 @@ export default {
   axios: {
     proxy: true
   },
-proxy: {
-    "/api": "http://localhost:8080"
+  proxy: {
+    // Simple proxy
+    "/api/": {
+      target: "https://zert.azurewebsites.net/",
+      pathRewrite: { "^/api/": "" }
+    },
   },
-  // Server Middleware
-  serverMiddleware: {
-    '/api': '~/api'
-  },
+    // Server Middleware
+    serverMiddleware: {
+      '/api': 'https://zert.azurewebsites.net/api'
+    },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
+    // Build Configuration: https://go.nuxtjs.dev/config-build
+    build: {
+    }
+    
   }
-}
