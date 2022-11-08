@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - ZERT
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -56,7 +56,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'AP-GEO'
+          app-name: 'ZERT'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F47A8397C05D42A0AE9C413AF686F08D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A1487933E2744DF8A66045DEB6A0DC26 }}
           package: .
