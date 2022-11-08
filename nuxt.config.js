@@ -47,7 +47,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL:"/api"
+    baseURL:"https://zert.azurewebsites.net/"
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
