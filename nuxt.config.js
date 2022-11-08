@@ -39,12 +39,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-  axios: {
-    proxy: true
-  },
-proxy: {
-    "/api": "https://zert.azurewebsites.net/"
-  },
+
   // Server Middleware
   serverMiddleware: {
     '/api': '~/api'
