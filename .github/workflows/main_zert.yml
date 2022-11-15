@@ -26,15 +26,12 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-          
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: release.zip
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,9 +45,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
-          
-      - name: unzip artifact for deployment
-        run: unzip release.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -58,5 +52,5 @@ jobs:
         with:
           app-name: 'ZERT'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A1487933E2744DF8A66045DEB6A0DC26 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E7CA60E2330140D08FF5D180629AFBBA }}
           package: .
