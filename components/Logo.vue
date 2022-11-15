@@ -1,19 +1,41 @@
-<template lang="pug">
-  svg.NuxtLogo(width='245' height='180' viewBox='0 0 452 342' xmlns='http://www.w3.org/2000/svg')
-    path(d='M139 330l-1-2c-2-4-2-8-1-13H29L189 31l67 121 22-16-67-121c-1-2-9-14-22-14-6 0-15 2-22 15L5 303c-1 3-8 16-2 27 4 6 10 12 24 12h136c-14 0-21-6-24-12z' fill='#00C58E')
-    path(d='M447 304L317 70c-2-2-9-15-22-15-6 0-15 3-22 15l-17 28v54l39-67 129 230h-49a23 23 0 0 1-2 14l-1 1c-6 11-21 12-23 12h76c3 0 17-1 24-12 3-5 5-14-2-26z' fill='#108775')
-    path(d='M376 330v-1l1-2c1-4 2-8 1-12l-4-12-102-178-15-27h-1l-15 27-102 178-4 12a24 24 0 0 0 2 15c4 6 10 12 24 12h190c3 0 18-1 25-12zM256 152l93 163H163l93-163z' fill='#2F495E')
+<template>
+  <div class="content ghost">
+<svg data-v-05d4cbf4="" class="w-5 h-5" viewBox="0 0 242 242" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="var(--color)" data-v-05d4cbf4="" d="M0 121C0 54.1735 54.1735 0 121 0V0C187.826 0 242 54.1735 242 121V121C242 187.826 187.826 242 121 242H0V121Z" ></path> <ellipse data-v-05d4cbf4="" cx="107.919" cy="121.002" rx="26.1622" ry="26.1622" transform="rotate(-90 107.919 121.002)" fill="var(--bg)" class="eye"></ellipse> <ellipse data-v-05d4cbf4="" cx="186.405" cy="121.002" rx="26.1622" ry="26.1622" transform="rotate(-90 186.405 121.002)" fill="var(--bg)" class="eye"></ellipse></svg>
+
+<div class="plug-doc">
+
+</div>
+</div>
 </template>
 
-<style>
-.NuxtLogo {
-  animation: 1s appear;
-  margin: auto;
+<style scoped>
+
+.ghost {
+  transform: scaleX(1) scaleY(1) translateZ(0px);
+opacity: 1;
+transform-origin: left bottom 0px;
+}
+.plug-doc { 
+  padding-left: 12px;
+  font-weight: 900;
+  font-size: 1rem;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
+.eye {
+  background: var(--bg);
+  -webkit-transform-origin: 50%;
+  -webkit-animation: blink-data-v-05d4cbf4 3s .25s infinite;
+  animation: blink-data-v-05d4cbf4 3s .25s infinite;
+}
+
+@keyframes blink {
+  90%, 100% {
+    transform: scaleY(1)
+  }
+  93% {
+    transform: scaleY(.2);
   }
 }
+
+
 </style>

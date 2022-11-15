@@ -10,15 +10,19 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/color-mode": "^2.0.5",
+    "@nuxtjs/svg": "^0.4.0",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "google-fonts-helper": "^3.2.2",
     "mongoose": "^5.10.0",
     "morgan": "^1.10.0",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
+    "@nuxtjs/google-fonts": "^2.0.0",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.1.0"
   }
